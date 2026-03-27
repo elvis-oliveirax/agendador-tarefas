@@ -3,13 +3,9 @@ package com.javaeo.agendadortarefas.infrastructure.security;
 
 import com.javaeo.agendadortarefas.business.dto.UsuarioDTO;
 import com.javaeo.agendadortarefas.infrastructure.security.client.UsuarioClient;
-import com.javaeo.usuario.infrastructure.entity.Usuario;
-import com.javaeo.usuario.infrastructure.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
