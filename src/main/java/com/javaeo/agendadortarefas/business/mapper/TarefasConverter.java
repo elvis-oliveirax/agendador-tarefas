@@ -1,6 +1,6 @@
 package com.javaeo.agendadortarefas.business.mapper;
 
-import com.javaeo.agendadortarefas.business.dto.TarefasDTO;
+import com.javaeo.agendadortarefas.business.dto.TarefasDTORecordORecord;
 import com.javaeo.agendadortarefas.infrastructure.entity.TarefasEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -14,11 +14,11 @@ public interface TarefasConverter {
 	@Mapping(source = "dataEvento", target = "dataEvento")
 	@Mapping(source = "dataCriacao", target = "dataCriacao")
 
-	TarefasEntity paraTarefaEntity(TarefasDTO dto);
+	TarefasEntity paraTarefaEntity(TarefasDTORecordORecord dto);
 
-	TarefasDTO paraTarefasDTO(TarefasEntity entity);
+	TarefasDTORecordORecord paraTarefasDTORecordORecord(TarefasEntity entity);
 
- 	List<TarefasEntity> paraListaTarefasEntity(List<TarefasDTO> dtos);
+ 	List<TarefasEntity> paraListaTarefasEntity(List<TarefasDTORecordORecord> dtos);
 
-	List<TarefasDTO> paraListaTarefasDTO(List<TarefasEntity> entities);
+	List<TarefasDTORecordORecord> paraListaTarefasDTORecordORecord(List<TarefasEntity> entities);
 }
