@@ -27,7 +27,7 @@ public class SecurityConfig {
 
     // Configuração do filtro de segurança
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) {
         // Cria uma instância do JwtRequestFilter com JwtUtil e UserDetailsService
         JwtRequestFilter jwtRequestFilter = new JwtRequestFilter(jwtUtil, userDetailsService);
 
@@ -42,7 +42,12 @@ public class SecurityConfig {
                 .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class); // Adiciona o filtro JWT antes do filtro de autenticação padrão
 
         // Retorna a configuração do filtro de segurança construída
-        return http.build();
+       try{
+           return http.build();
+       } catch (Exception e) {
+           throw new IllegalStateException(
+                   "Erro ao configurar SecurityFilterChain", e);
+       }
     }
 
 
